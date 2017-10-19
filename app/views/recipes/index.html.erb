@@ -1,17 +1,3 @@
-<h1 align="center">Listing all Recipes</h1>
-<% @recipes.each do |recipe| %>
-  <div class="row">
-    <div class="col-md-2">
-      <section class="center">
+<%= render 'shared/page_title', title: "showing all recipes" %>
 
-      </section>
-    </div>
-    <div class="col-md-8 well">
-      <h4><%= recipe.name %></h4>
-      <p><%= truncate(recipe.description, length: 150) %></p>
-      <p>
-        <span class="quiet"><small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
-      </p>
-    </div>
-  </div>
-<% end %>
+<%= render 'recipe', obj: @recipes %>
